@@ -1,0 +1,13 @@
+---
+- name: dnfinstaller
+  ansible.builtin.dnf:
+    name: httpd
+    state: present
+- name: copy file
+  copy:
+    src: files/index.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: '0644'
+
